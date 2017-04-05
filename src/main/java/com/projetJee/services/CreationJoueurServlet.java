@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.servlet.http.HttpServlet;
 
 import com.projetJee.controllers.Utilisateur;
@@ -15,6 +16,8 @@ import com.projetJee.domain.Joueur;
 public class CreationJoueurServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -7372395777343490647L;
+	
+	@PersistenceContext( unitName = "Burglu" )
 	EntityManager entityManager;
 
 	public CreationJoueurServlet() {
